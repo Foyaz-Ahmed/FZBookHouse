@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FZBookHouse.Data
+namespace FZBookHouse.DataAccess.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

@@ -13,6 +13,28 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.18" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.18" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FZBookHouse.DataAccess\FZBookHouse.DataAccess.csproj" />
+    <ProjectReference Include="..\FZBookHouse.Models\FZBookHouse.Models.csproj" />
+    <ProjectReference Include="..\FZBookHouse.Utilities\FZBookHouse.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Admin\Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Admin\Views\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

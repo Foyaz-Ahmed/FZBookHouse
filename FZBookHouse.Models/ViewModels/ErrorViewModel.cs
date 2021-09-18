@@ -1,6 +1,6 @@
 using System;
 
-namespace FZBookHouse.Models
+namespace FZBookHouse.Models.ViewModels
 {
     public class ErrorViewModel
     {
