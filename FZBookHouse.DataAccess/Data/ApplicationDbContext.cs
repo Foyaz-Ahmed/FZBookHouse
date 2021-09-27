@@ -1,4 +1,5 @@
 ﻿using FZBookHouse.Models;
+using FZBookHouse.Models.ViewModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,5 +16,6 @@ namespace FZBookHouse.DataAccess.Data
       
         }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<CoverType> CoverTypes { get; set; } 
     }
 }

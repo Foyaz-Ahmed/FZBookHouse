@@ -41,7 +41,7 @@ namespace FZBookHouse.DataAccess.Repository
 
                 return sqlCon.Query<T>(procedureName, param, commandType: System.Data.CommandType.StoredProcedure);
             }
-               
+
         }
 
         public Tuple<IEnumerable<T1>, IEnumerable<T2>> List<T1, T2>(string procedureName, DynamicParameters param = null)
@@ -54,7 +54,7 @@ namespace FZBookHouse.DataAccess.Repository
                 var item1 = result.Read<T1>().ToList();
                 var item2 = result.Read<T2>().ToList();
 
-                if(item1 != null && item2 != null)
+                if (item1 != null && item2 != null)
                 {
                     return new Tuple<IEnumerable<T1>, IEnumerable<T2>>(item1, item2);
                 }
@@ -66,9 +66,9 @@ namespace FZBookHouse.DataAccess.Repository
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                sqlCon.Open(); 
+                sqlCon.Open();
                 var value = sqlCon.Query<T>(procedureName, param, commandType: System.Data.CommandType.StoredProcedure);
-                
+
                 return (T)Convert.ChangeType(value.FirstOrDefault(), typeof(T));
             }
         }
