@@ -18,7 +18,6 @@ namespace FZBookHouse.DataAccess.Repository
             CoverType = new CoverTypeRepository(_db);
             SP_Call = new SP_Call(_db);
         }
-
         public ICategoryRepository Category { get; private set; }
         public ICoverTypeRepository CoverType { get; private set; }
         
