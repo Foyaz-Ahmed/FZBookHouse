@@ -9,12 +9,23 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <!--Load Kendo styles from the Kendo CDN service-->
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.913/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.913/styles/kendo.default.min.css" />
+
+    <!--Load the required libraries - jQuery, Kendo, Babel and Vue-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.3.913/js/kendo.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+
+    <!--Load the required Kendo Vue package(s)-->
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="Customer" asp-controller="Home" asp-action="Index">FZBookHouse</a>
+                <a class="navbar-brand" asp-area="Customer" asp-controller="Home" asp-action="Index">FZ Brands</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,6 +41,7 @@
                                 Content Management
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
                                 <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
                                 <a class="dropdown-item" asp-area="Admin" asp-controller="CoverType" asp-action="Index">Cover Type</a>
                                 <a class="dropdown-item" href="#">Another action</a>
@@ -50,7 +62,7 @@
 
     <footer class="border-top footer text-white-50 bg-primary">
         <div class="container">
-            &copy; 2021 - FZBookHouse -</a>
+          <a>  &copy; 2021 - FZBookHouse -</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
