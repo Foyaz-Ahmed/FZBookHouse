@@ -61,15 +61,17 @@
             @if (User.IsInRole(SD.Role__Admin))
             {
 
-                <div class="form-control">
+                <div class="">
                     <label asp-for="Input.Role"></label>
-                    @Html.DropDownListFor(m => m.Input.Role, Model.Input.RoleList, "-Please Select a Role", new { @class = "form-control" })
+                    @Html.DropDownListFor(m => m.Input.Role, Model.Input.RoleList, "-Please Select a Role-", new { @class = "form-control" })
                 </div>
-                <div class="form-control">
+                <br />
+                <div class="">
                     <label asp-for="Input.Company"></label>
-                    @Html.DropDownListFor(m => m.Input.Company, Model.Input.CompanyList, "-Please Select a Company", new { @class = "form-control" })
+                    @Html.DropDownListFor(m => m.Input.CompanyId, Model.Input.CompanyList, "-Please Select a Company-", new { @class = "form-control" })
                 </div>
-            }
+            }<br />
+
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>

@@ -9,15 +9,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-    <!--Load Kendo styles from the Kendo CDN service-->
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.913/styles/kendo.common.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.913/styles/kendo.default.min.css" />
 
-    <!--Load the required libraries - jQuery, Kendo, Babel and Vue-->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2017.3.913/js/kendo.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 
     <!--Load the required Kendo Vue package(s)-->
 </head>
@@ -55,6 +47,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">User</a>
                             </div>
                         </li>
                     </ul>
