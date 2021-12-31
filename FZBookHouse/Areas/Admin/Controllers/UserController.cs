@@ -8,10 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using FZBookHouse.Utilities;
 
 namespace FZBookHouse.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role__Admin + "," + SD.Role__Emp)]
     public class UserController : Controller
     {
         //private readonly IUnitofWork _unitOfWork;
@@ -31,12 +34,13 @@ namespace FZBookHouse.Areas.Admin.Controllers
         public IActionResult GetAll()
         {
             var userList = _db.ApplicationUsers.Include(e => e.Company).ToList();
-            var uerRole = _db.UserRoles.ToList();
+            var userRole = _db.UserRoles.ToList();
             var roles = _db.Roles.ToList();
 
             foreach(var user in userList)
             {
-                var roleId = uerRole.FirstOrDefault(u => u.UserId == user.Id).RoleId;
+
+                var roleId = userRole.FirstOrDefault(u => u.UserId == user.Id).RoleId;
                 user.Role = roles.FirstOrDefault(u => u.Id == roleId).Name;
 
                 if(user.Company == null)

@@ -3,6 +3,8 @@ using FZBookHouse.DataAccess.Repository;
 using FZBookHouse.DataAccess.Repository.IRepository;
 using FZBookHouse.Models;
 using FZBookHouse.Models.ViewModels;
+using FZBookHouse.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -15,6 +17,7 @@ using System.Threading.Tasks;
 namespace FZBookHouse.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role__Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitofWork _unitOfWork;

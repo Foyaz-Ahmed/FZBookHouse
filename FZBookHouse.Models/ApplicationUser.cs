@@ -18,6 +18,7 @@ namespace FZBookHouse.Models
         public int? CompanyId { set; get; }
         [ForeignKey("CompanyId")]
         public Company Company { set; get; }
+         
         [NotMapped]
         public string Role { set; get; }
 

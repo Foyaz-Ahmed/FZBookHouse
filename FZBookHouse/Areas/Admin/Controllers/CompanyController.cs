@@ -2,6 +2,8 @@
 using FZBookHouse.DataAccess.Repository;
 using FZBookHouse.DataAccess.Repository.IRepository;
 using FZBookHouse.Models;
+using FZBookHouse.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ using System.Threading.Tasks;
 namespace FZBookHouse.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize( Roles = SD.Role__Admin + "," + SD.Role__Emp)]
     public class CompanyController : Controller
     {
         private readonly IUnitofWork _unitOfWork;
