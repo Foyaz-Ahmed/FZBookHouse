@@ -6,6 +6,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using FZBookHouse.Models;
+using FZBookHouse.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -51,6 +53,16 @@ namespace FZBookHouse.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+
+            //me added
+            [Required]
+            public string Name { get; set; }
+            public string State { get; set; }
+            public string StreetAddress { get; set; }
+            public string City { set; get; }
+            public string PostalCode { set; get; }
+            public int? CompanyId { set; get; }
+            public string PhoneNumber { set; get; }
         }
 
         public IActionResult OnGetAsync()
@@ -101,7 +113,8 @@ namespace FZBookHouse.Areas.Identity.Pages.Account
                 {
                     Input = new InputModel
                     {
-                        Email = info.Principal.FindFirstValue(ClaimTypes.Email)
+                        Email = info.Principal.FindFirstValue(ClaimTypes.Email),
+                        Name = info.Principal.FindFirstValue(ClaimTypes.Name)
                     };
                 }
                 return Page();
@@ -121,11 +134,23 @@ namespace FZBookHouse.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    CompanyId = Input.CompanyId,
+                    State = Input.State,
+                    City = Input.City,
+                    PostalCode = Input.PostalCode,
+                    StreetAddress = Input.StreetAddress,
+                    PhoneNumber = Input.PhoneNumber,
+                    Name = Input.Name
+                };
 
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, SD.Role_User_Indiv);
                     result = await _userManager.AddLoginAsync(user, info);
                     if (result.Succeeded)
                     {

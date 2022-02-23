@@ -48,6 +48,17 @@ namespace FZBookHouse
                 options.LogoutPath = $"/Identity/Account/Logout";
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
+            services.AddAuthentication().AddFacebook(options =>
+            {
+                options.AppId = "915873345744498";
+                options.AppSecret = "183a89882ecfd6378863ff10b4eb0f87";
+            });
+            services.AddAuthentication().AddGoogle(options =>
+            {
+                options.ClientId = "141691804213-jliuveg4lfbglqi8ap2l1qn9484ulg0d.apps.googleusercontent.com";
+                options.ClientSecret = "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";
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
