@@ -57,9 +57,9 @@
                 <label asp-for="Input.PostalCode"></label>
                 <input asp-for="Input.PostalCode" class="form-control" />
                 <span asp-validation-for="Input.PostalCode" class="text-danger"></span>
-            </div>
-            @if (User.IsInRole(SD.Role__Admin))
-            {
+            </div>   
+            @*@if (User.IsInRole(SD.Role__Admin))
+          {*@
 
                 <div class="">
                     <label asp-for="Input.Role"></label>
@@ -70,7 +70,7 @@
                     <label asp-for="Input.Company"></label>
                     @Html.DropDownListFor(m => m.Input.CompanyId, Model.Input.CompanyList, "-Please Select a Company-", new { @class = "form-control" })
                 </div>
-            }<br />
+            @*}*@<br />
 
             <button type="submit" class="btn btn-primary">Register</button>
         </form>

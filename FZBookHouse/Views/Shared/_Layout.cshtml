@@ -29,8 +29,8 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        @if (User.IsInRole(SD.Role__Admin))
-                        {
+                        @*@if (User.IsInRole(SD.Role__Admin))*@
+                        @*{*@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Content Management
@@ -41,9 +41,9 @@
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="CoverType" asp-action="Index">Cover Type</a>
                                 </div>
                             </li>
-                        }
-                        @if (User.IsInRole(SD.Role__Admin) || User.IsInRole(SD.Role__Emp))
-                        {
+                        @*}*@
+                        @*@if (User.IsInRole(SD.Role__Admin) || User.IsInRole(SD.Role__Emp))
+                        {*@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Company/ User
@@ -53,7 +53,7 @@
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">User</a>
                                 </div>
                             </li>
-                        }
+                        @*}*@
                     </ul>
                 </div>
             </div>

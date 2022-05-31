@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace FZBookHouse.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize( Roles = SD.Role__Admin + "," + SD.Role__Emp)]
+  //  [Authorize( Roles = SD.Role__Admin + "," + SD.Role__Emp)]
     public class CompanyController : Controller
     {
         private readonly IUnitofWork _unitOfWork;

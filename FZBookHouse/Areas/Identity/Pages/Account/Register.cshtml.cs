@@ -132,10 +132,10 @@ namespace FZBookHouse.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    if(!await _roleManager.RoleExistsAsync(SD.Role__Admin))
-                    {
+               //     if(!await _roleManager.RoleExistsAsync(SD.Role__Admin))
+              //      {
                         await _roleManager.CreateAsync(new IdentityRole(SD.Role__Admin));
-                    }
+                //    }
                     if (!await _roleManager.RoleExistsAsync(SD.Role__Emp))
                     {
                         await _roleManager.CreateAsync(new IdentityRole(SD.Role__Emp));

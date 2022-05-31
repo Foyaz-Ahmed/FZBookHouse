@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace FZBookHouse.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = SD.Role__Admin)]
+   // [Authorize(Roles = SD.Role__Admin)]
     public class CoverTypeController : Controller
     {
         private readonly IUnitofWork _unitOfWork;

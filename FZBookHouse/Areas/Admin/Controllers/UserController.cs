@@ -14,7 +14,7 @@ using FZBookHouse.Utilities;
 namespace FZBookHouse.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = SD.Role__Admin + "," + SD.Role__Emp)]
+   // [Authorize(Roles = SD.Role__Admin + "," + SD.Role__Emp)]
     public class UserController : Controller
     {
         //private readonly IUnitofWork _unitOfWork;

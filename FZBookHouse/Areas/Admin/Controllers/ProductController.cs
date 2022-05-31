@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace FZBookHouse.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = SD.Role__Admin)]
+   // [Authorize(Roles = SD.Role__Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitofWork _unitOfWork;
