@@ -11,6 +11,9 @@ namespace FZBookHouse.DataAccess.Repository.IRepository
         IProductRepository Product { get; }
         ICompanyRepository Company { get; }
         IApplicationUserRepository ApplicationUser { get; }
+        IOrderMasterRepository OrderMaster { get; }
+        IOrderDetailsRepository OrderDetails { get; }
+        IShoppingCartRepository ShoppingCart { get; }
         ISP_Call  SP_Call { get; }
         void Save();
     }
